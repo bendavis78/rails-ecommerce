@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'figaro'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
@@ -37,11 +40,11 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'cancancan'
+gem 'omniauth-facebook'
 
 gem 'binding_of_caller'
 
 gem 'hirb'
-gem 'better_errors', group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

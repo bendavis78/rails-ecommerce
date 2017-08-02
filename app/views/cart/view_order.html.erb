@@ -1,0 +1,23 @@
+<h2>My Cart</h2>
+
+<div>
+  <% @line_items.each do |line_item| %>
+    <div class="well row">
+      <div class="col-md-2">
+	      <% if line_item.product.image.url.nil? == false %>
+	        <p><%= image_tag line_item.product.image.url, class: "storefront-pics" %></p>
+	      <% end %>
+      </div>
+      <div class="col-md-10">
+		    <p><h4><%= line_item.product.name %></h4></p>
+		    <p><%= number_to_currency line_item.product.price %></p>
+		    <p>Qty: <%= line_item.quantity %></p>
+		    <p>Subtotal: <%= number_to_currency line_item.total %></p> 
+		  </div>
+		</div>
+  <% end %>
+</div>
+
+<div>
+ <%= link_to "Proceed to Checkout", checkout_path, class: "btn btn-success" %>
+</div>
